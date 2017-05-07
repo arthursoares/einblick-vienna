@@ -1,0 +1,75 @@
+---
+layout: default
+---
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image:url(http://api.tiles.mapbox.com/v4/mapbox.dark/16.345232,48.199998,14/1200x600@2x.png?access_token={{ site.mapbox-token }});">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+                    <span class="subheading">{{ page.description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+    <div class="col-lg-9"><div id="map" style=" height: 1200px"></div></div>
+		<div class="col-lg-3" style="margin-top:-30px;">
+			{{ content }}
+		</div>
+	</div>
+</div>
+
+<script>
+L.mapbox.accessToken = '{{site.mapbox-token}}';
+var bounds = [
+    [48.202465,16.375895], // Southwest coordinates
+    [48.216879,16.328387]  // Northeast coordinates
+];
+var map = L.mapbox.map('map', '{{site.mapid}}', {
+    // set that bounding box as maxBounds to restrict moving the map
+    // see full maxBounds documentation:
+    // http://leafletjs.com/reference.html#map-maxbounds
+    maxBounds: bounds,
+    maxZoom: 19,
+    minZoom: 14
+});
+
+var featureLayer = L.mapbox.featureLayer()
+.loadURL('/map/hofs.geojson')
+.addTo(map);
+
+featureLayer.on('ready', function() {
+  map.fitBounds([[
+        48.216879,
+        16.338387
+    ], [
+        48.202465,
+        16.375895
+    ]]);
+});
+
+featureLayer.on('layeradd', function(e) {
+  var marker = e.layer,
+  feature = marker.feature;
+
+  // Create custom popup content
+  var popupContent =  '<a class="popup" href="' + feature.properties.url + '">' +
+  '<img alt="'+ feature.properties.title +'+" style="max-width: 250px" src="' + feature.properties.image + '" style="text-align:center;"/><p class="text-center">'+feature.properties.title+'</p></a>';
+
+  // http://leafletjs.com/reference.html#popup
+  marker.bindPopup(popupContent,{
+    minWidth: 300,
+    closeButton: false
+  });
+});
+</script>
+<hr>
