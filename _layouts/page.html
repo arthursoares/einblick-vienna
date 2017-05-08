@@ -44,7 +44,7 @@ var map = L.mapbox.map('map', '{{site.mapid}}', {
 });
 
 var featureLayer = L.mapbox.featureLayer()
-.loadURL('/map/hofs.geojson')
+.loadURL('{{site.url}}/map/hofs.geojson')
 .addTo(map);
 
 featureLayer.on('ready', function() {
