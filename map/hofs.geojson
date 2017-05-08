@@ -7,8 +7,8 @@
       "type": "Feature",
       "properties": {
         "title": "{{ place.title }}",
-        "image": "{{ place.image }}",
-        "url": "{{place.url}}",
+        "image": "{{ place.image | prepend: site.baseurl | replace: '//', '/' }}",
+        "url": "{{place.url | prepend: site.baseurl | replace: '//', '/' }}",
         "year": "{{ year }}",
         "marker-size": "medium",{% if place.tags contains 'recommended' %}
         "recommended": true,{% endif %}
