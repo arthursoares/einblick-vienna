@@ -8,10 +8,10 @@ number: 6
 
 
 <div class="photos">
-<img src="{{site.url}}/images/zieglergasse36_1.jpg" >
-<img src="{{site.url}}/images/zieglergasse36_2.jpg" >
-<img src="{{site.url}}/images/zieglergasse36_3.jpg" >
-<img src="{{site.url}}/images/zieglergasse36_4.jpg" >
+<img src="https://csvuh86c.cloudimg.io/s/width/1200/{{site.url}}/images/zieglergasse36_1.jpg" >
+<img src="https://csvuh86c.cloudimg.io/s/width/1200/{{site.url}}/images/zieglergasse36_2.jpg" >
+<img src="https://csvuh86c.cloudimg.io/s/width/1200/{{site.url}}/images/zieglergasse36_3.jpg" >
+<img src="https://csvuh86c.cloudimg.io/s/width/1200/{{site.url}}/images/zieglergasse36_4.jpg" >
 
 
 </div>
