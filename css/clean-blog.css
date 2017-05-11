@@ -56,8 +56,24 @@ hr.small {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-ul {
+ul.posts {
+  display: block;
+text-align: center;
+margin: 0 auto;
+margin-top:20px;
+position: relative;
+width: 100%;
   list-style: none;
+  float: left;
+  padding: 0;
+  padding-left: 0px;
+}
+ul.posts li {
+  float: left;
+  display: block;
+  width: 31%;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .navbar-custom .navbar-brand {

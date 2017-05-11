@@ -18,8 +18,11 @@ layout: default
     </div>
   </div>
 	<div class="row">
-    <div class="col-lg-9"><div id="map" style=" height: 1500px"></div></div>
-		<div class="col-lg-3" style="margin-top:-30px;">
+    <div class="col-lg-12"><div id="map" style=" height: 600px"></div>
+  </div>
+</div>
+  <div class="row">
+		<div class="col-lg-12">
 			{{ content }}
 		</div>
 	</div>
@@ -27,8 +30,18 @@ layout: default
 
 <script>
 L.mapbox.accessToken = '{{site.mapbox-token}}';
-
-var map = L.mapbox.map('map', '{{site.mapid}}');
+var bounds = [
+    [48.202465,16.375895], // Southwest coordinates
+    [48.216879,16.328387]  // Northeast coordinates
+];
+var map = L.mapbox.map('map', '{{site.mapid}}', {
+    // set that bounding box as maxBounds to restrict moving the map
+    // see full maxBounds documentation:
+    // http://leafletjs.com/reference.html#map-maxbounds
+    maxBounds: bounds,
+    maxZoom: 19,
+    minZoom: 14
+});
 
 var featureLayer = L.mapbox.featureLayer()
 .loadURL('{{site.url}}/map/hofs.geojson')
@@ -36,11 +49,11 @@ var featureLayer = L.mapbox.featureLayer()
 
 featureLayer.on('ready', function() {
   map.fitBounds([[
-        48.216879,
-        16.338387
+        48.219879,
+        16.334387
     ], [
         48.202465,
-        16.375895
+        16.346895
     ]]);
 });
 
