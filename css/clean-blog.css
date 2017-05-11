@@ -56,6 +56,15 @@ hr.small {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.cell {
+  width: 30%;
+}
+
 ul.posts {
   display: block;
 text-align: center;
