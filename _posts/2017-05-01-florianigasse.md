@@ -1,5 +1,5 @@
 ---
-title: Florianigasse 13
+title: Floriangasse 13
 image: /images/floriangasse13_5.jpg
 coordinates:
  - 16.352362,48.211858
