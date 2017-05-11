@@ -53,10 +53,16 @@ layout: default
 <div id="map" style="max-width: 100%; margin: 0 auto 1em; height: 300px"></div>
 <script>
 L.mapbox.accessToken = '{{site.mapbox-token}}';
-var map = L.mapbox.map('map', '{{site.mapid}}');
+var map = L.mapbox.map('map', '{{site.mapid}}', {
+    // set that bounding box as maxBounds to restrict moving the map
+    // see full maxBounds documentation:
+    // http://leafletjs.com/reference.html#map-maxbounds
+    maxZoom: 19,
+    minZoom: 14
+});
 
 var featureLayer = L.mapbox.featureLayer()
-.loadURL('/map/hofs.geojson')
+.loadURL('{{site.url}}/map/hofs.geojson')
 .addTo(map);
 
 featureLayer.on('ready', function() {

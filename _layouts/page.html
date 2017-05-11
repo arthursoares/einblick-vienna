@@ -38,7 +38,6 @@ var map = L.mapbox.map('map', '{{site.mapid}}', {
     // set that bounding box as maxBounds to restrict moving the map
     // see full maxBounds documentation:
     // http://leafletjs.com/reference.html#map-maxbounds
-    maxBounds: bounds,
     maxZoom: 19,
     minZoom: 14
 });
@@ -48,13 +47,7 @@ var featureLayer = L.mapbox.featureLayer()
 .addTo(map);
 
 featureLayer.on('ready', function() {
-  map.fitBounds([[
-        48.219879,
-        16.334387
-    ], [
-        48.202465,
-        16.346895
-    ]]);
+  map.fitBounds(featureLayer.getBounds());
 });
 
 featureLayer.on('layeradd', function(e) {
