@@ -8,7 +8,7 @@
       "properties": {
         "title": "{{ place.title }}",
         "image": "{{ place.image | prepend: site.baseurl | replace: '//', '/' }}",
-        "url": "{{place.url}}",
+        "url": "{{place.url | prepend: site.url | replace: '//', '/' }}",
         "year": "{{ year }}",
         "marker-size": "medium",{% if place.tags contains 'recommended' %}
         "recommended": true,{% endif %}

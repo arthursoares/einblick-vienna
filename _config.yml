@@ -4,7 +4,7 @@ header-img: img/home-bg.jpg
 email: ksenia.disterhof@web.de
 description: "EinBlick hinter die Fassaden. Innenhöfe – Ein verborgenes Wien"
 baseurl: "https://kseniadisterhof.github.io/einblick-vienna"
-url: "https://kseniadisterhof.github.io/einblick-vienna"
+url: "/einblick-vienna"
 email_username:  ksenia.disterhof@web.de
 permalink: /:title/
 
