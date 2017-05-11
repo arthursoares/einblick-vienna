@@ -60,7 +60,7 @@ featureLayer.on('layeradd', function(e) {
 
   // Create custom popup content
   var popupContent =  '<a class="popup" href="' + feature.properties.url + '">' +
-  '<img alt="'+ feature.properties.title +'+" style="max-width: 350px" src="https://csvuh86c.cloudimg.io/s/resizeinbox/300x300/' + feature.properties.image + '" style="text-align:center;"/><p class="text-center">'+feature.properties.title+'</p></a>';
+  '<img alt="'+ feature.properties.title +'+" style="max-width: 350px" src="https://csvuh86c.cloudimg.io/s/resizeinbox/280x280/' + feature.properties.image + '" style="text-align:center;"/><p class="text-center">'+feature.properties.title+'</p></a>';
 
   // http://leafletjs.com/reference.html#popup
   marker.bindPopup(popupContent,{

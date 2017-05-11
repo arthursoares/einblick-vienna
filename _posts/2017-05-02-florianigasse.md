@@ -1,0 +1,17 @@
+---
+title: Florianigasse 13
+image: /images/floriangasse13_5.jpg
+coordinates:
+ - 16.352362,48.211858
+number: 1
+---
+
+
+<div class="photos">
+<img src="{{site.url}}/images/floriangasse13_1.jpg">
+<img src="{{site.url}}/images/floriangasse13_2.jpg">
+<img src="{{site.url}}/images/floriangasse13_3.jpg">
+<img src="{{site.url}}/images/floriangasse13_4.jpg">
+<img src="{{site.url}}/images/floriangasse13_5.jpg">
+
+</div>
