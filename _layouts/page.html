@@ -27,11 +27,8 @@ layout: default
 
 <script>
 L.mapbox.accessToken = '{{site.mapbox-token}}';
-var bounds = [
-    [48.202465,16.375895], // Southwest coordinates
-    [48.216879,16.328387]  // Northeast coordinates
-];
 
+var map = L.mapbox.map('map', '{{site.mapid}}');
 
 var featureLayer = L.mapbox.featureLayer()
 .loadURL('{{site.url}}/map/hofs.geojson')
